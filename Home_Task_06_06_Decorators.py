@@ -22,7 +22,7 @@ def log(old_function):
     return new_function
 
 @log
-def md5_generator(path, path_log):
+def md5_generator(path, **kwargs):
     with open(path, 'rb') as file:
         strings = file.readlines()
         for string in strings:
@@ -33,7 +33,7 @@ for string in md5_generator('wiki_links.txt', path_log = 'C:\\Users\\t.petruk\\d
 
 # __________Пробую декоратор для другой функции_________
 # @log
-# def pow(path_log):
+# def pow(**kwargs):
 #     random_list = [random.randrange(1, 100) for _ in range(100)]
 #     return random_list
 #
